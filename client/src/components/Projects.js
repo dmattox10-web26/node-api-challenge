@@ -8,4 +8,4 @@ const Projects = props => {
     )
 }
 
-export default Action
+export default Projects

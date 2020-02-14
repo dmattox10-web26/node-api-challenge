@@ -4,7 +4,7 @@ const Actions = require('../data/helpers/actionModel')
 
 const router = express.Router()
 
-router.post('/', validateAction, (res, res) => {
+router.post('/', validateAction, (req, res) => {
     Actions.insert(req.body)
     .then(action => {
         res.status(201).json(action)

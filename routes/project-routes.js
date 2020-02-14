@@ -4,7 +4,7 @@ const Projects = require('../data/helpers/projectModel')
 
 const router = express.Router()
 
-router.post('/', validateProject, (res, res) => {
+router.post('/', validateProject, (req, res) => {
     Projects.insert(req.body)
     .then(project => {
         res.status(201).json(project)
