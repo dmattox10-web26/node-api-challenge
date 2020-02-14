@@ -1,10 +1,13 @@
 const express = require('express')
+const cors = require('cors')
+const helmet = require('helmet')
 const actionRouter = require('./routes/action-routes')
 const projectRouter = require('./routes/project-routes')
 
 const server = express()
 
-server.use(helmet)
+server.use(cors())
+server.use(helmet())
 server.use(express.json())
 
 server.get('/', (req, res) => {
