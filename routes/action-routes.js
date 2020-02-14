@@ -5,23 +5,54 @@ const Actions = require('../data/helpers/actionModel')
 const router = express.Router()
 
 router.post('/', validateAction, (res, res) => {
-
+    Actions.insert(req.body)
+    .then(action => {
+        res.status(201).json(action)
+    })
+    .catch(err => {
+        res.status(500).json({ error: err })
+    })
 })
 
 router.get('/', (req, res) => {
-
+    Actions.get()
+    .then(actions => {
+        res.status(200).json(actions)
+    })
+    .catch(err => {
+        res.status(500).json({ error: err })
+    })
 })
 
 router.get('/:id', validateId, (req, res) => {
+    Actions.get(req.params.id)
+    .then(action => {
+        res.status(200).json(action)
+    })
+    .catch(err => {
+        res.status(500).json({ error: err })
+    })
 
 })
 
 router.put('/:id', validateId, validateAction, (req, res) => {
-
+    Actions.update(req.params.id, req.body)
+    .then(action => {
+        res.status(200).json(action)
+    })
+    .catch(err => {
+        res.status(500).json({ error: err })
+    })
 })
 
 router.delete('/:id', validateId, (req, res) => {
-
+    Actions.remove(req.params.id)
+    .then(removed => {
+        res.status(200).json(removed)
+    })
+    .catch(err => {
+        res.status(500).json({ error: err })
+    })
 })
 
 function validateAction(req, res, next) {
