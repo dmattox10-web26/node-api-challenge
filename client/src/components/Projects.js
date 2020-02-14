@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Container, Jumbotron } from 'reactstrap'
 import axios from 'axios'
+import cuid from 'cuid'
 
 import Project from './Project'
 
@@ -21,7 +22,7 @@ const Projects = props => {
             <Container>
                 <Jumbotron>
                     {
-                        projects.map(project => <div key={ Date.now() }><Project project={ project } /><div className='spacer'></div></div>)
+                        projects.map(project => <div key={ cuid() }><Project project={ project } /><div className='spacer'></div></div>)
                     }
                 </Jumbotron>
             </Container>
