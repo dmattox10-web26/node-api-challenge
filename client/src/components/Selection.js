@@ -98,7 +98,7 @@ const Selection = props => {
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             value={formik.values.description}
-                                            class={formik.touched.description && !formik.errors.description ? 'form-control is-valid' : 'form-control is-invalid'}
+                                            className={formik.touched.description && !formik.errors.description ? 'form-control is-valid' : 'form-control is-invalid'}
                                         />
                                         {formik.touched.description && formik.errors.description ? <div className='invalid-feedback'>{formik.errors.description}</div> : null}
                                     </FormGroup>
@@ -115,7 +115,7 @@ const Selection = props => {
                                             onChange={formik.handleChange}
                                             onBlur={formik.handleBlur}
                                             value={formik.values.notes}
-                                            class={formik.touched.notes && !formik.errors.notes ? 'form-control is-valid' : 'form-control is-invalid'}
+                                            className={formik.touched.notes && !formik.errors.notes ? 'form-control is-valid' : 'form-control is-invalid'}
                                         />
                                         {formik.touched.notes && formik.errors.notes ? <div className='invalid-feedback'>{formik.errors.notes}</div> : null}
                                     </FormGroup>
