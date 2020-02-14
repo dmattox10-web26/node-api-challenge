@@ -17,10 +17,10 @@ router.get('/:id', validateId, (req, res) => {
 })
 
 router.get('/:id/actions', validateId, (req, res) => {
-    
+
 })
 
-router.put('/:id', validateId, (req, res) => {
+router.put('/:id', validateId, validateProject, (req, res) => {
 
 })
 
@@ -34,7 +34,7 @@ function validateProject(req, res, next) {
 }
 
 function validateId(req, res, next) {
-
+    
 }
 
 module.exports = router
